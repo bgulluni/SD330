@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Refrigerator App</title>
+</head>
+<body>
+	<h1>Refrigerator App</h1>
+	<div>
+		<button id="onButton">On</button>
+		<button id="offButton">Off</button>
+	</div>
+	<div>
+		<h2>Temperature</h2>
+		<p id="tempDisplay">--</p>
+		<div id="fridge"></div>
+	</div>
+	<div>
+		<h2>TV</h2>
+		<p id="tv">--</p>
+	</div>
+	<div>
+		<h2>Browser</h2>
+		<p id="browser">--</p>
+	</div>
+	<div>
+		<h2>Lock</h2>
+		<button id="lock">Unlock</button>
+	</div>
+	<div>
+		<h2>Clock</h2>
+		<p id="clock">--</p>
+	</div>
+	<script>
+        let onButton = document.getElementById("onButton");
+let offButton = document.getElementById("offButton");
+let tempDisplay = document.getElementById("tempDisplay");
+let lock = document.getElementById("lock");
+let clock = document.getElementById("clock");
+let tvDisplay = document.getElementById("tvDisplay");
+let browserDisplay = document.getElementById("browserDisplay");
+let body = document.body;
+
+let tvChannel = "HBO";
+let browserTab = "https://www.google.com/";
+
+function turnOn() {
+	onButton.style.backgroundColor = "green";
+	offButton.style.backgroundColor = "white";
+	offButton.style.color = "black";
+	body.style.backgroundColor = "green";
+	body.style.color = "black";
+
+	let temp = 40;
+	let isLocked = false;
+
+	setInterval(function() {
+		let date = new Date();
+		let time = date.toLocaleTimeString();
+		clock.innerHTML = time;
+	}, 1000);
+
+	let tempInterval = setInterval(function() {
+		temp--;
+		if (temp <= 32) {
+			tempDisplay.style.color = "blue";
+		} else if (temp > 32 && temp <= 39) {
+			tempDisplay.style.color = "black";
+		} else if (temp > 39 && temp <= 45) {
+			tempDisplay.style.color = "orange";
+		} else if (temp > 45) {
+			tempDisplay.style.color = "red";
+		}
+		tempDisplay.innerHTML = temp + " &deg;F";
+	}, 5000);
+
+	tvDisplay.innerHTML = "TV: " + tvChannel;
+	browserDisplay.innerHTML = "Browser: " + browserTab;
+
+	lock.addEventListener("click", function() {
+		if (isLocked) {
+			isLocked = false;
+			lock.innerHTML = "Unlock";
+		} else {
+			isLocked = true;
+			lock.innerHTML = "Lock";
+		}
+	});
+}
+
+function turnOff() {
+	onButton.style.backgroundColor = "white";
+	offButton.style.backgroundColor = "red";
+	offButton.style.color = "white";
+	body.style.backgroundColor = "red";
+	body.style.color = "white";
+
+	clearInterval(tempInterval);
+	clock.innerHTML = "--";
+	tempDisplay.innerHTML = "--";
+	tvDisplay.innerHTML = "TV: ";
+	browserDisplay.innerHTML = "Browser: ";
+}
+
+onButton.addEventListener("click", turnOn);
+offButton.addEventListener("click", turnOff);
+
+
+    </script>
+</body>
+</html>
