@@ -121,18 +121,18 @@
             fileListElem.appendChild(listItem);
         });
         function getFileList(){
-		      (async () => {
-			      const response = await fetch("https://api.github.com/repos/bgulluni/SD330/contents/");
-			      const data = await response.json();
+		(async () => {
+		    const response = await fetch("https://api.github.com/repos/bgulluni/SD330/contents/");
+		    const data = await response.json();
     	
-			      let htmlString = "";
-    		      for (let file of data) {
+		    let htmlString = "";
+    		    for (let file of data) {
 				
-				      fname = file.name;           
-				      fpath = "https://bgulluni.github.io/SD330/" + fname;  
+			fname = file.name;           
+			fpath = "https://bgulluni.github.io/SD330/" + fname;  
 				
-				      fileList.name = fname ;
-				      fileList.url = fpath ;
+			fileList.name = fname ;
+			fileList.url = fpath ;
 			}
 		})()
         }
