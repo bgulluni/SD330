@@ -1,0 +1,44 @@
+{
+    "Course": {
+        "CMPT330": {
+            "id": "1",
+            "Title": "System Design",
+            "Semester": "Spring",
+            "Professor": "Andrew Tokash"
+        },
+        "CMPT307": {
+            "id": "2",
+            "Title": "Internetworking",
+            "Semester": "Spring",
+            "Professor":"Andrew Tokash"
+        },
+        "ENG205":{
+            "id":"3",
+            "Title": "Fantasy and Science Fiction",
+            "Semester": "Fall",
+            "Professor": "Branden Sanderson"
+        }
+    },
+    "Book": {
+        "Sys Design 101":{
+            "ISBN": "10101092BN",
+            "Title": "System Design 101",
+            "Author": "Molly Brook",
+            "CourseID" : "1"
+        },
+        "Internetworking 101":{
+            "ISBN": "1651651as651",
+            "Title": "Internetworking 101",
+            "Author": "Adam Sanderson",
+            "CourseID" : "2"
+        },
+        "Lord of the Rings":{
+            "ISBN": "45154s521",
+            "Title": "Lord of the Rings",
+            "Author": "J.R.R Tolkin",
+            "CourseID": "3"
+        }
+    }
+    
+    //Do 3 courses and books
+}
