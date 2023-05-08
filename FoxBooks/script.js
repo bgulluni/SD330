@@ -3,15 +3,21 @@ const data = {
   "courses": [
     {
       "title": "Mathematics",
-      "book": "Introduction to Calculus"
+      "book": "Introduction to Calculus",
+      "semester": "Fall 2023",
+      "professor": "Dr. Smith"
     },
     {
       "title": "Physics",
-      "book": "Fundamentals of Physics"
+      "book": "Fundamentals of Physics",
+      "semester": "Spring 2024",
+      "professor": "Dr. Johnson"
     },
     {
       "title": "Biology",
-      "book": "Biology: A Global Approach"
+      "book": "Biology: A Global Approach",
+      "semester": "Fall 2023",
+      "professor": "Dr. Anderson"
     }
     // Add more courses and books as needed
   ]
