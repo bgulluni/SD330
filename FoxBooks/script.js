@@ -8,7 +8,7 @@ const data = {
       "professor": "Andrew Tokash",
       "bookISBN": "98716513241",
       "bookAuthor": "Lana Sanders"
-    },
+    }, 
     {
       "title": "Internetworking",
       "book": "Internetworking 101",
