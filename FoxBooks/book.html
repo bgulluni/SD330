@@ -12,8 +12,10 @@
       <li><a href="courses.html">Courses</a></li>
       <li>Book Details</li>
     </ul>
-    <h2>Book:</h2>
+    <h2>Book Details:</h2>
     <p id="bookTitle"></p>
+    <p id="bookISBN"></p>
+    <p id="bookAuthor"></p>
     <h2>Course Details:</h2>
     <p id="semester"></p>
     <p id="professor"></p>
@@ -36,6 +38,13 @@
       if (courseInfo) {
         document.getElementById("semester").textContent = `Semester: ${courseInfo.semester}`;
         document.getElementById("professor").textContent = `Professor: ${courseInfo.professor}`;
+      }
+
+      // Retrieve the book information from the data object
+      const bookInfo = data.books.find(book => book.title === bookTitle);
+      if (bookInfo) {
+        document.getElementById("bookISBN").textContent = `ISBN: ${bookInfo.isbn}`;
+        document.getElementById("bookAuthor").textContent = `Author: ${bookInfo.author}`;
       }
     });
   </script>
