@@ -14,6 +14,8 @@
     </ul>
     <h2>Book:</h2>
     <p id="bookTitle"></p>
+    <p id="bookAuthor"></p>
+    <p id="bookISBN"></p>
     <h2>Course Details:</h2>
     <p id="semester"></p>
     <p id="professor"></p>
@@ -36,6 +38,8 @@
       if (courseInfo) {
         document.getElementById("semester").textContent = `Semester: ${courseInfo.semester}`;
         document.getElementById("professor").textContent = `Professor: ${courseInfo.professor}`;
+        document.getElementById("bookAuthor").textContent = `Author: ${courseInfo.bookAuthor}`;
+        document.getElementById("bookISBN").textContent = `ISBN: ${courseInfo.bookISBN}`;
       }
     });
   </script>
