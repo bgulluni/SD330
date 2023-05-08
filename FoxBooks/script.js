@@ -1,66 +1,53 @@
-// Sample data object containing course and book information
+// JSON data (courses and books)
 const data = {
   "courses": [
     {
       "title": "Mathematics",
       "book": "Introduction to Calculus",
       "semester": "Fall 2023",
-      "professor": "Dr. Smith"
+      "professor": "Dr. Malick",
+      "bookISBN": "123",
+      "bookAuthor": "John Smith"
     },
     {
       "title": "Physics",
       "book": "Fundamentals of Physics",
       "semester": "Spring 2024",
-      "professor": "Dr. Johnson"
+      "professor": "Dr. Jackson",
+      "bookISBN": "123",
+      "bookAuthor": "John Smith"
     },
     {
       "title": "Biology",
       "book": "Biology: A Global Approach",
       "semester": "Fall 2023",
-      "professor": "Dr. Anderson"
+      "professor": "Dr. Matthews",
+      "bookISBN": "123",
+      "bookAuthor": "John Smith"
     }
-    // Add more courses with semester and professor details as needed
-  ],
-  "books": [
-    {
-      "title": "Introduction to Calculus",
-      "isbn": "9781234567890",
-      "author": "John Smith"
-    },
-    {
-      "title": "Fundamentals of Physics",
-      "isbn": "9780987654321",
-      "author": "Jane Doe"
-    },
-    {
-      "title": "Biology: A Global Approach",
-      "isbn": "9785678901234",
-      "author": "David Johnson"
-    }
-    // Add more books with ISBN and author details as needed
+    // Add more courses and books as needed
   ]
 };
 
-// Retrieve the course and book titles from sessionStorage
-document.addEventListener("DOMContentLoaded", function() {
-  const courseTitle = sessionStorage.getItem("courseTitle");
-  const bookTitle = sessionStorage.getItem("bookTitle");
+// Function to display all courses on Page 2
+function displayCourses() {
+  const courseList = document.getElementById("courseList");
 
-  // Update the content on the book.html page
-  document.getElementById("courseTitle").textContent = courseTitle;
-  document.getElementById("bookTitle").textContent = `Book Title: ${bookTitle}`;
+  data.courses.forEach((course) => {
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = "book.html";
+    link.textContent = course.title;
+    listItem.appendChild(link);
+    courseList.appendChild(listItem);
 
-  // Retrieve the course information from the data object
-  const courseInfo = data.courses.find(course => course.title === courseTitle);
-  if (courseInfo) {
-    document.getElementById("semester").textContent = `Semester: ${courseInfo.semester}`;
-    document.getElementById("professor").textContent = `Professor: ${courseInfo.professor}`;
-  }
+    // Store the course title and book title in sessionStorage for later retrieval
+    link.addEventListener("click", function () {
+      sessionStorage.setItem("courseTitle", course.title);
+      sessionStorage.setItem("bookTitle", course.book);
+    });
+  });
+}
 
-  // Retrieve the book information from the data object
-  const bookInfo = data.books.find(book => book.title === bookTitle);
-  if (bookInfo) {
-    document.getElementById("bookISBN").textContent = `ISBN: ${bookInfo.isbn}`;
-    document.getElementById("bookAuthor").textContent = `Author: ${bookInfo.author}`;
-  }
-});
+// Call the displayCourses function on page load
+displayCourses();
