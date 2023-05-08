@@ -5,19 +5,25 @@ const data = {
       "title": "Mathematics",
       "book": "Introduction to Calculus",
       "semester": "Fall 2023",
-      "professor": "Dr. Malick"
+      "professor": "Dr. Malick",
+      "bookISBN": "123",
+      "bookAuthor": "John Smith"
     },
     {
       "title": "Physics",
       "book": "Fundamentals of Physics",
       "semester": "Spring 2024",
-      "professor": "Dr. Jackson"
+      "professor": "Dr. Jackson",
+      "bookISBN": "123",
+      "bookAuthor": "John Smith"
     },
     {
       "title": "Biology",
       "book": "Biology: A Global Approach",
       "semester": "Fall 2023",
-      "professor": "Dr. Matthews"
+      "professor": "Dr. Matthews",
+      "bookISBN": "123",
+      "bookAuthor": "John Smith"
     }
     // Add more courses and books as needed
   ]
