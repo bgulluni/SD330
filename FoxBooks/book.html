@@ -17,5 +17,15 @@
     <p id="bookTitle"></p>
     <a href="courses.html" class="button">Back to Courses</a>
   </div>
+
+  <script>
+    // Retrieve the course and book titles from sessionStorage
+    const courseTitle = sessionStorage.getItem("courseTitle");
+    const bookTitle = sessionStorage.getItem("bookTitle");
+
+    // Update the content on the book.html page
+    document.getElementById("courseTitle").textContent = courseTitle;
+    document.getElementById("bookTitle").textContent = bookTitle;
+  </script>
 </body>
 </html>
