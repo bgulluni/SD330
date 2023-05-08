@@ -3,7 +3,6 @@
 <head>
   <title>FoxBooks - Book Details</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="script.js"></script>
 </head>
 <body>
   <div class="container">
@@ -17,5 +16,18 @@
     <p id="bookTitle"></p>
     <a href="courses.html" class="button">Back to Courses</a>
   </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Retrieve the course and book titles from sessionStorage
+    document.addEventListener("DOMContentLoaded", function() {
+      const courseTitle = sessionStorage.getItem("courseTitle");
+      const bookTitle = sessionStorage.getItem("bookTitle");
+
+      // Update the content on the book.html page
+      document.getElementById("courseTitle").textContent = courseTitle;
+      document.getElementById("bookTitle").textContent = `Title: ${bookTitle}`;
+    });
+  </script>
 </body>
 </html>
