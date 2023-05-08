@@ -58,16 +58,9 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Retrieve the book information from the data object
-   fetch("books.json")
-    .then(response => response.json())
-    .then(data => {
-      const bookInfo = data.books.find(book => book.title === bookTitle);
-      if (bookInfo) {
-        document.getElementById("bookISBN").textContent = `ISBN: ${bookInfo.isbn}`;
-        document.getElementById("bookAuthor").textContent = `Author: ${bookInfo.author}`;
-      }
-    })
-    .catch(error => {
-      console.log("An error occurred while fetching book data:", error);
-    });
+  const bookInfo = data.books.find(book => book.title === bookTitle);
+  if (bookInfo) {
+    document.getElementById("bookISBN").textContent = `ISBN: ${bookInfo.isbn}`;
+    document.getElementById("bookAuthor").textContent = `Author: ${bookInfo.author}`;
+  }
 });
