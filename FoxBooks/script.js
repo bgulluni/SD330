@@ -13,7 +13,7 @@ const data = {
       "title": "Biology",
       "book": "Biology: A Global Approach"
     }
-    
+    // Add more courses and books as needed
   ]
 };
 
@@ -44,9 +44,9 @@ function handleCourseClick(event) {
   const courseTitle = event.target.dataset.courseTitle;
   const bookTitle = event.target.dataset.bookTitle;
 
-  // Store the course and book titles in localStorage for retrieval on the book page
-  localStorage.setItem("courseTitle", courseTitle);
-  localStorage.setItem("bookTitle", bookTitle);
+  // Store the course and book titles in sessionStorage for retrieval on the book page
+  sessionStorage.setItem("courseTitle", courseTitle);
+  sessionStorage.setItem("bookTitle", bookTitle);
 }
 
 // Call the displayCourses function on page load
