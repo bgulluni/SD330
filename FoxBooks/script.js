@@ -53,6 +53,12 @@ const data = {
   ]
 };
 
+// Function to search courses
+function searchCourses() {
+  const searchInput = document.getElementById("searchInput").value;
+  const filteredCourses = data.courses.filter(course => course.title.toLowerCase().includes(searchInput.toLowerCase()));
+  displayCourses(filteredCourses);
+}
 // Function to display all courses on Page 2
 function displayCourses() {
   const courseList = document.getElementById("courseList");
