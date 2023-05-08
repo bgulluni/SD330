@@ -2,28 +2,52 @@
 const data = {
   "courses": [
     {
-      "title": "Mathematics",
-      "book": "Introduction to Calculus",
-      "semester": "Fall 2023",
-      "professor": "Dr. Malick",
-      "bookISBN": "123",
-      "bookAuthor": "John Smith"
+      "title": "System Design",
+      "book": "Introduction to System Design",
+      "semester": "Spring 2023",
+      "professor": "Andrew Tokash",
+      "bookISBN": "98716513241",
+      "bookAuthor": "Lana Sanders"
     },
     {
-      "title": "Physics",
-      "book": "Fundamentals of Physics",
+      "title": "Internetworking",
+      "book": "Internetworking 101",
       "semester": "Spring 2024",
-      "professor": "Dr. Jackson",
-      "bookISBN": "123",
-      "bookAuthor": "John Smith"
+      "professor": "Andrew Tokash",
+      "bookISBN": "8465121576623",
+      "bookAuthor": "Molly Brook"
     },
     {
-      "title": "Biology",
-      "book": "Biology: A Global Approach",
+      "title": "Fantasy  and Science Fiction",
+      "book": "Lord of the Rings",
       "semester": "Fall 2023",
-      "professor": "Dr. Matthews",
-      "bookISBN": "123",
-      "bookAuthor": "John Smith"
+      "professor": "Branden Sanderson",
+      "bookISBN": "65468765431",
+      "bookAuthor": "J.R.R Tolkin"
+    },
+    {
+      "title": "Descrete Math",
+      "book": "Descrete Computing Mathmatics",
+      "semester": "Fall 2023",
+      "professor": "Malick Nydie",
+      "bookISBN": "34513246878465",
+      "bookAuthor": "Molly Brook"
+    },
+    {
+      "title": "Software Development 1",
+      "book": "Intro to Python",
+      "semester": "Fall 2022",
+      "professor": "Jake Reeder",
+      "bookISBN": "7984651935426",
+      "bookAuthor": "Adam Blake"
+    },
+    {
+      "title": "Software Development 2",
+      "book": "MySQL & Php",
+      "semester": "Spring 2022",
+      "professor": "Ron Coleman",
+      "bookISBN": "65464165431",
+      "bookAuthor": "Greg Nott"
     }
     // Add more courses and books as needed
   ]
