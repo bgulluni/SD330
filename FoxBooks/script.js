@@ -41,28 +41,26 @@ const data = {
   ]
 };
 
-// Display the course list on the courses.html page
-function display() {
-  const courseList = document.getElementById("courseList");
-
-  // Iterate through each course in the data object and create list items
-  data.courses.forEach(course => {
-    const listItem = document.createElement("li");
-    listItem.textContent = course.title;
-
-    // Add an event listener to navigate to the book.html page on click
-    listItem.addEventListener("click", function() {
-      sessionStorage.setItem("courseTitle", course.title);
-      sessionStorage.setItem("bookTitle", course.book);
-      window.location.href = "book.html";
-    });
-
-    // Append the list item to the course list
-    courseList.appendChild(listItem);
-  });
-}
-
-// Call the display function when the courses.html page has finished loading
+// Retrieve the course and book titles from sessionStorage
 document.addEventListener("DOMContentLoaded", function() {
-  display();
+  const courseTitle = sessionStorage.getItem("courseTitle");
+  const bookTitle = sessionStorage.getItem("bookTitle");
+
+  // Update the content on the book.html page
+  document.getElementById("courseTitle").textContent = courseTitle;
+  document.getElementById("bookTitle").textContent = `Book Title: ${bookTitle}`;
+
+  // Retrieve the course information from the data object
+  const courseInfo = data.courses.find(course => course.title === courseTitle);
+  if (courseInfo) {
+    document.getElementById("semester").textContent = `Semester: ${courseInfo.semester}`;
+    document.getElementById("professor").textContent = `Professor: ${courseInfo.professor}`;
+  }
+
+  // Retrieve the book information from the data object
+  const bookInfo = data.books.find(book => book.title === bookTitle);
+  if (bookInfo) {
+    document.getElementById("bookISBN").textContent = `ISBN: ${bookInfo.isbn}`;
+    document.getElementById("bookAuthor").textContent = `Author: ${bookInfo.author}`;
+  }
 });
