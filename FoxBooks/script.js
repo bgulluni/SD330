@@ -1,4 +1,4 @@
-// JSON data (courses and books)
+// Sample data object containing course and book information
 const data = {
   "courses": [
     {
@@ -19,29 +19,48 @@ const data = {
       "semester": "Fall 2023",
       "professor": "Dr. Anderson"
     }
-    // Add more courses and books as needed
+    // Add more courses with semester and professor details as needed
+  ],
+  "books": [
+    {
+      "title": "Introduction to Calculus",
+      "isbn": "9781234567890",
+      "author": "John Smith"
+    },
+    {
+      "title": "Fundamentals of Physics",
+      "isbn": "9780987654321",
+      "author": "Jane Doe"
+    },
+    {
+      "title": "Biology: A Global Approach",
+      "isbn": "9785678901234",
+      "author": "David Johnson"
+    }
+    // Add more books with ISBN and author details as needed
   ]
 };
 
-// Function to display all courses on Page 2
-function displayCourses() {
-  const courseList = document.getElementById("courseList");
+// Retrieve the course and book titles from sessionStorage
+document.addEventListener("DOMContentLoaded", function() {
+  const courseTitle = sessionStorage.getItem("courseTitle");
+  const bookTitle = sessionStorage.getItem("bookTitle");
 
-  data.courses.forEach((course) => {
-    const listItem = document.createElement("li");
-    const link = document.createElement("a");
-    link.href = "book.html";
-    link.textContent = course.title;
-    listItem.appendChild(link);
-    courseList.appendChild(listItem);
+  // Update the content on the book.html page
+  document.getElementById("courseTitle").textContent = courseTitle;
+  document.getElementById("bookTitle").textContent = `Book Title: ${bookTitle}`;
 
-    // Store the course title and book title in sessionStorage for later retrieval
-    link.addEventListener("click", function () {
-      sessionStorage.setItem("courseTitle", course.title);
-      sessionStorage.setItem("bookTitle", course.book);
-    });
-  });
-}
+  // Retrieve the course information from the data object
+  const courseInfo = data.courses.find(course => course.title === courseTitle);
+  if (courseInfo) {
+    document.getElementById("semester").textContent = `Semester: ${courseInfo.semester}`;
+    document.getElementById("professor").textContent = `Professor: ${courseInfo.professor}`;
+  }
 
-// Call the displayCourses function on page load
-displayCourses();
+  // Retrieve the book information from the data object
+  const bookInfo = data.books.find(book => book.title === bookTitle);
+  if (bookInfo) {
+    document.getElementById("bookISBN").textContent = `ISBN: ${bookInfo.isbn}`;
+    document.getElementById("bookAuthor").textContent = `Author: ${bookInfo.author}`;
+  }
+});
