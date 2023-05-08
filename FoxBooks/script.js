@@ -56,11 +56,5 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("semester").textContent = `Semester: ${courseInfo.semester}`;
     document.getElementById("professor").textContent = `Professor: ${courseInfo.professor}`;
   }
-
-  // Retrieve the book information from the data object
-  const bookInfo = data.books.find(book => book.title === bookTitle);
-  if (bookInfo) {
-    document.getElementById("bookISBN").textContent = `ISBN: ${bookInfo.isbn}`;
-    document.getElementById("bookAuthor").textContent = `Author: ${bookInfo.author}`;
-  }
 });
+
