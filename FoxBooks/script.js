@@ -29,24 +29,12 @@ function displayCourses() {
     listItem.appendChild(link);
     courseList.appendChild(listItem);
 
-    // Store the course title in a data attribute for later retrieval
-    link.dataset.courseTitle = course.title;
-    // Store the book title in a data attribute for later retrieval
-    link.dataset.bookTitle = course.book;
-
-    // Add an event listener to handle clicking on a course
-    link.addEventListener("click", handleCourseClick);
+    // Store the course title and book title in sessionStorage for later retrieval
+    link.addEventListener("click", function () {
+      sessionStorage.setItem("courseTitle", course.title);
+      sessionStorage.setItem("bookTitle", course.book);
+    });
   });
-}
-
-// Function to handle clicking on a course
-function handleCourseClick(event) {
-  const courseTitle = event.target.dataset.courseTitle;
-  const bookTitle = event.target.dataset.bookTitle;
-
-  // Store the course and book titles in sessionStorage for retrieval on the book page
-  sessionStorage.setItem("courseTitle", courseTitle);
-  sessionStorage.setItem("bookTitle", bookTitle);
 }
 
 // Call the displayCourses function on page load
